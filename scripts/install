@@ -55,12 +55,15 @@ ynh_add_systemd_config
 yunohost service add "$app" --description="A short description of the app" --log="/var/log/$app/$app.log"
 
 #=================================================
-# SETUP APPLICATION WITH CURL
+# INSTALL CUSDIS
 #=================================================
+ynh_script_progression "Installing $app..."
 
-ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn install
-ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn run build:without-migrate
-ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH npm run db:generate && npm run db:deploy && next start -p $port
+pushd $install_dir
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn install
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn run build:without-migrate
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH npm run db:generate && npm run db:deploy && next start -p $port
+popd
 
 #=================================================
 # START SYSTEMD SERVICE
