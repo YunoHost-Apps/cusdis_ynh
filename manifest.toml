@@ -64,7 +64,7 @@ ram.runtime = "50M"
     [resources.ports]
 
     [resources.apt]
-    packages = "sqlit3"
+    packages = "sqlite3"
 
     extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
     extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
