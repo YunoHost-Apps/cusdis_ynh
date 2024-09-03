@@ -4,4 +4,4 @@
 # COMMON VARIABLES
 #=================================================
 
-nodejs_version=16
+nodejs_version=18
