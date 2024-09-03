@@ -29,8 +29,6 @@ Cusdis is an open-source, lightweight (~5kb gzip), privacy-friendly alternative 
 
 **分发版本：** 1.3.0~ynh1
 
-**演示：** <https://demo.example.com>
-
 ## 截图
 
 ![Cusdis 的截图](./doc/screenshots/screenshot.png)

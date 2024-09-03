@@ -29,8 +29,6 @@ Cusdis est une alternative open source, légère (~5 ko gzip) et respectueuse d
 
 **Version incluse :** 1.3.0~ynh1
 
-**Démo :** <https://demo.example.com>
-
 ## Captures d’écran
 
 ![Capture d’écran de Cusdis](./doc/screenshots/screenshot.png)
