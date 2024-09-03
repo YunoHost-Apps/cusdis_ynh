@@ -20,7 +20,7 @@ code = "https://github.com/djyde/cusdis"
 [integration]
 yunohost = ">= 11.2.30"
 architectures = "all"
-multi_instance = true
+multi_instance = false
 
 ldap = false
 
