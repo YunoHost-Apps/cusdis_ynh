@@ -43,7 +43,7 @@ Cusdis is an open-source, lightweight (~5kb gzip), privacy-friendly alternative 
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/cusdis_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/cusdis_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 
