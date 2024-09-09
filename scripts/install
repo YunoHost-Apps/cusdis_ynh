@@ -8,6 +8,16 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
+# INITIALIZE AND STORE SETTINGS
+#=================================================
+
+password=$YNH_APP_ARG_PASSWORD
+ynh_app_setting_set --app=$app --key=password --value="$password"
+
+key=$(ynh_string_random)
+ynh_app_setting_set --app=$app --key=key --value="$key"
+
+#=================================================
 # INSTALL DEPENDENCIES
 #=================================================
 ynh_script_progression --message="Installing nodejs..."
@@ -45,12 +55,14 @@ ynh_add_systemd_config
 yunohost service add "$app" --description="A short description of the app" --log="/var/log/$app/$app.log"
 
 #=================================================
-# SETUP APPLICATION WITH CURL
+# INSTALL CUSDIS
 #=================================================
+ynh_script_progression "Installing $app..."
 
-ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn install
-ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn run build:without-migrate
-ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH npm run db:generate && npm run db:deploy && next start -p $port
+pushd $install_dir
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn install
+	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn run build
+popd
 
 #=================================================
 # START SYSTEMD SERVICE

@@ -14,22 +14,21 @@ maintainers = []
 [upstream]
 license = "GPL-3.0"
 website = "https://cusdis.com/"
-demo = "https://demo.example.com"
 admindoc = "https://cusdis.com/doc#/self-host/manual"
 code = "https://github.com/djyde/cusdis"
 
 [integration]
 yunohost = ">= 11.2.30"
 architectures = "all"
-multi_instance = true
+multi_instance = false
 
 ldap = false
 
 sso = false
 
-disk = "50M"
-ram.build = "50M"
-ram.runtime = "50M"
+disk = "2000M"
+ram.build = "1200M"
+ram.runtime = "250M"
 
 [install]
     [install.domain]
@@ -63,10 +62,14 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.ports]
+    main.default = 3000
 
     [resources.apt]
-    packages = "sqlit3"
+    packages = "postgresql"
 
     extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
     extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
     extras.yarn.packages = "yarn"
+
+    [resources.database]
+    type = "postgresql"
