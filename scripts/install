@@ -51,9 +51,9 @@ yunohost service add "$app" --description="Privacy-friendly alternative to Disqu
 ynh_script_progression "Installing $app..."
 
 pushd $install_dir
-	ynh_hide_warnings ynh_exec_as_app env NODE_ENV=production DB_TYPE=pgsql yarn install
-	ynh_hide_warnings ynh_exec_as_app env NODE_ENV=production DB_TYPE=pgsql yarn run build:without-migrate
-	ynh_hide_warnings ynh_exec_as_app env NODE_ENV=production DB_TYPE=pgsql yarn run start:with-migrate
+	ynh_hide_warnings ynh_exec_as_app env DB_TYPE=pgsql yarn install
+	ynh_hide_warnings ynh_exec_as_app env DB_TYPE=pgsql yarn run build:without-migrate
+	ynh_hide_warnings ynh_exec_as_app env DB_TYPE=pgsql yarn run start:with-migrate
 popd
 
 #=================================================
