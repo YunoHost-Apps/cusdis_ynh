@@ -5,7 +5,9 @@
 
 # Cusdis для YunoHost
 
-[![Уровень интеграции](https://dash.yunohost.org/integration/cusdis.svg)](https://ci-apps.yunohost.org/ci/apps/cusdis/) ![Состояние работы](https://ci-apps.yunohost.org/ci/badges/cusdis.status.svg) ![Состояние сопровождения](https://ci-apps.yunohost.org/ci/badges/cusdis.maintain.svg)
+[![Уровень интеграции](https://apps.yunohost.org/badge/integration/cusdis)](https://ci-apps.yunohost.org/ci/apps/cusdis/)
+![Состояние работы](https://apps.yunohost.org/badge/state/cusdis)
+![Состояние сопровождения](https://apps.yunohost.org/badge/maintained/cusdis)
 
 [![Установите Cusdis с YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=cusdis)
 

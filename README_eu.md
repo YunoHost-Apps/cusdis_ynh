@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # Cusdis YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/cusdis.svg)](https://ci-apps.yunohost.org/ci/apps/cusdis/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/cusdis.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/cusdis.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/cusdis)](https://ci-apps.yunohost.org/ci/apps/cusdis/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/cusdis)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/cusdis)
 
 [![Instalatu Cusdis YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=cusdis)
 

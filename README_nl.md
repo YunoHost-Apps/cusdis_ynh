@@ -5,7 +5,9 @@ Hij mag NIET handmatig aangepast worden.
 
 # Cusdis voor Yunohost
 
-[![Integratieniveau](https://dash.yunohost.org/integration/cusdis.svg)](https://ci-apps.yunohost.org/ci/apps/cusdis/) ![Mate van functioneren](https://ci-apps.yunohost.org/ci/badges/cusdis.status.svg) ![Onderhoudsstatus](https://ci-apps.yunohost.org/ci/badges/cusdis.maintain.svg)
+[![Integratieniveau](https://apps.yunohost.org/badge/integration/cusdis)](https://ci-apps.yunohost.org/ci/apps/cusdis/)
+![Mate van functioneren](https://apps.yunohost.org/badge/state/cusdis)
+![Onderhoudsstatus](https://apps.yunohost.org/badge/maintained/cusdis)
 
 [![Cusdis met Yunohost installeren](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=cusdis)
 

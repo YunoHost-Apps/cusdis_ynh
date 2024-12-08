@@ -5,7 +5,9 @@
 
 # YunoHost 上的 Cusdis
 
-[![集成程度](https://dash.yunohost.org/integration/cusdis.svg)](https://ci-apps.yunohost.org/ci/apps/cusdis/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/cusdis.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/cusdis.maintain.svg)
+[![集成程度](https://apps.yunohost.org/badge/integration/cusdis)](https://ci-apps.yunohost.org/ci/apps/cusdis/)
+![工作状态](https://apps.yunohost.org/badge/state/cusdis)
+![维护状态](https://apps.yunohost.org/badge/maintained/cusdis)
 
 [![使用 YunoHost 安装 Cusdis](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=cusdis)
 

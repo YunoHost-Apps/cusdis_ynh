@@ -5,7 +5,9 @@ It shall NOT be edited by hand.
 
 # Cusdis for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/cusdis.svg)](https://ci-apps.yunohost.org/ci/apps/cusdis/) ![Working status](https://ci-apps.yunohost.org/ci/badges/cusdis.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/cusdis.maintain.svg)
+[![Integration level](https://apps.yunohost.org/badge/integration/cusdis)](https://ci-apps.yunohost.org/ci/apps/cusdis/)
+![Working status](https://apps.yunohost.org/badge/state/cusdis)
+![Maintenance status](https://apps.yunohost.org/badge/maintained/cusdis)
 
 [![Install Cusdis with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=cusdis)
 
