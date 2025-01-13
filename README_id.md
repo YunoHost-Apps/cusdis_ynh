@@ -5,7 +5,9 @@ Ini TIDAK boleh diedit dengan tangan.
 
 # Cusdis untuk YunoHost
 
-[![Tingkat integrasi](https://dash.yunohost.org/integration/cusdis.svg)](https://ci-apps.yunohost.org/ci/apps/cusdis/) ![Status kerja](https://ci-apps.yunohost.org/ci/badges/cusdis.status.svg) ![Status pemeliharaan](https://ci-apps.yunohost.org/ci/badges/cusdis.maintain.svg)
+[![Tingkat integrasi](https://apps.yunohost.org/badge/integration/cusdis)](https://ci-apps.yunohost.org/ci/apps/cusdis/)
+![Status kerja](https://apps.yunohost.org/badge/state/cusdis)
+![Status pemeliharaan](https://apps.yunohost.org/badge/maintained/cusdis)
 
 [![Pasang Cusdis dengan YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=cusdis)
 
