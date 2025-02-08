@@ -43,6 +43,17 @@ ynh_config_add_systemd
 yunohost service add "$app" --description="Privacy-friendly alternative to Disqus" --log="/var/log/$app/$app.log"
 
 #=================================================
+# INSTALL CUSDIS
+#=================================================
+ynh_script_progression "Installing $app..."
+
+pushd $install_dir
+	ynh_hide_warnings ynh_exec_as_app yarn install
+	ynh_hide_warnings ynh_exec_as_app yarn run build:without-migrate
+	ynh_hide_warnings ynh_exec_as_app yarn run start:with-migrate
+popd
+
+#=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
