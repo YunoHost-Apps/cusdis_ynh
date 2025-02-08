@@ -29,7 +29,7 @@ Cusdis is an open-source, lightweight (~5kb gzip), privacy-friendly alternative 
 - Many integrations
 
 
-**Versi terkirim:** 1.3.0~ynh1
+**Versi terkirim:** 1.3.2~ynh1
 
 ## Tangkapan Layar
 
