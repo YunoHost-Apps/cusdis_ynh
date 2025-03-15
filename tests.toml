@@ -4,9 +4,19 @@ test_format = 1.0
 
 [default]
 
+    # ------------
+    # Tests to run
+    # ------------
+
     # -------------------------------
     # Default args to use for install
     # -------------------------------
 
     args.admin = "john"
     args.password = "0123456"
+
+    # -------------------------------
+    # Commits to test upgrade from
+    # -------------------------------
+
+    # test_upgrade_from.f0688002714ce24827063ea4cabea24b8ebc32f5.name = "Upgrade from 1.3.0~ynh1"

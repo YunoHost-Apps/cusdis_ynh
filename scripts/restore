@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
+# Keep this path for calling _common.sh inside the execution's context of backup and restore scripts
 source ../settings/scripts/_common.sh
 source /usr/share/yunohost/helpers
 
@@ -9,6 +14,13 @@ source /usr/share/yunohost/helpers
 ynh_script_progression "Restoring the app main directory..."
 
 ynh_restore "$install_dir"
+
+#=================================================
+# INSTALL DEPENDENCIES
+#=================================================
+ynh_script_progression "Installing nodejs..."
+
+ynh_nodejs_install
 
 #=================================================
 # RESTORE THE POSTGRESQL DATABASE
@@ -26,15 +38,18 @@ ynh_restore "/etc/nginx/conf.d/$domain.d/$app.conf"
 
 ynh_restore "/etc/systemd/system/$app.service"
 systemctl enable "$app.service" --quiet
-
 yunohost service add "$app" --description="Privacy-friendly alternative to Disqus" --log="/var/log/$app/$app.log"
+
+mkdir -p /var/log/$app
+chown -R $app:$app /var/log/$app
+ynh_restore "/etc/logrotate.d/$app"
 
 #=================================================
 # RELOAD NGINX AND PHP-FPM OR THE APP SERVICE
 #=================================================
 ynh_script_progression "Reloading NGINX web server and $app's service..."
 
-ynh_systemctl --service="$app" --action="start"
+ynh_systemctl --service="$app" --action="start" --wait_until="started server on" --log_path="/var/log/$app/$app.log"
 
 ynh_systemctl --service=nginx --action=reload
 
