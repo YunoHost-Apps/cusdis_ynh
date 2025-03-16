@@ -29,7 +29,7 @@ Cusdis is an open-source, lightweight (~5kb gzip), privacy-friendly alternative 
 - Many integrations
 
 
-**Поставляемая версия:** 1.3.0~ynh2
+**Поставляемая версия:** 1.3.2~ynh1
 
 ## Снимки экрана
 
