@@ -51,7 +51,6 @@ ram.runtime = "250M"
     [resources.sources.main]
     url = "https://github.com/djyde/cusdis/archive/refs/tags/v1.3.2.tar.gz"
     sha256 = "f480f4dbbc0bb320a505a02248738d4c4ce44129af5227b2b5a9b05629bdb09e"
-
     autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
