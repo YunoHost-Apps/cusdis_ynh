@@ -1,6 +1,9 @@
 #!/bin/bash
 
-source _common.sh
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -14,17 +17,11 @@ key=$(ynh_string_random)
 ynh_app_setting_set --key=key --value="$key"
 
 #=================================================
-# INSTALL DEPENDENCIES
-#=================================================
-ynh_script_progression "Installing nodejs..."
-
-ynh_nodejs_install
-
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Setting up source files..."
 
+# Download, check integrity, uncompress and patch the source from manifest.toml
 ynh_setup_source --dest_dir="$install_dir"
 
 #=================================================
@@ -39,11 +36,15 @@ ynh_config_add --template=".env" --destination="$install_dir/.env"
 #=================================================
 ynh_script_progression "Adding system configurations related to $app..."
 
+# Create a dedicated NGINX config using the conf/nginx.conf template
 ynh_config_add_nginx
 
+# Create a dedicated systemd config
 ynh_config_add_systemd
-
 yunohost service add "$app" --description="Privacy-friendly alternative to Disqus" --log="/var/log/$app/$app.log"
+
+# Use logrotate to manage application logfile(s)
+ynh_config_add_logrotate
 
 #=================================================
 # INSTALL CUSDIS
@@ -51,9 +52,9 @@ yunohost service add "$app" --description="Privacy-friendly alternative to Disqu
 ynh_script_progression "Installing $app..."
 
 pushd $install_dir
-	ynh_hide_warnings ynh_exec_as_app env DB_TYPE=pgsql yarn install
-	ynh_hide_warnings ynh_exec_as_app env DB_TYPE=pgsql yarn run build:without-migrate
-	ynh_hide_warnings ynh_exec_as_app env DB_TYPE=pgsql yarn run start:with-migrate
+	ynh_hide_warnings ynh_exec_as_app DB_TYPE=pgsql yarn install
+	ynh_hide_warnings ynh_exec_as_app DB_TYPE=pgsql yarn run build:without-migrate
+	ynh_hide_warnings ynh_exec_as_app DB_TYPE=pgsql yarn run start:with-migrate
 popd
 
 #=================================================
@@ -61,9 +62,11 @@ popd
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service="$app" --action="start"
+# Start a systemd service
+ynh_systemctl --service="$app" --action="start" --wait_until="started server on" --log_path="/var/log/$app/$app.log"
 
 #=================================================
 # END OF SCRIPT
 #=================================================
+
 ynh_script_progression "Installation of $app completed"
