@@ -51,6 +51,7 @@ ynh_config_add_logrotate
 ynh_script_progression "Installing $app..."
 
 pushd $install_dir
+	ynh_hide_warnings corepack enable && corepack prepare yarn@4.13.0 --activate
 	ynh_hide_warnings ynh_exec_as_app yarn install
 	ynh_hide_warnings ynh_exec_as_app DB_TYPE=pgsql yarn run build
 popd
